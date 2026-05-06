@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RpgApi.Data;
 
@@ -11,9 +12,11 @@ using RpgApi.Data;
 namespace RpgApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20260506000918_MigracaoUsuario")]
+    partial class MigracaoUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,13 +41,7 @@ namespace RpgApi.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar");
 
-                    b.Property<int>("PersonagemId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PersonagemId")
-                        .IsUnique();
 
                     b.ToTable("TB_ARMAS", (string)null);
 
@@ -53,50 +50,43 @@ namespace RpgApi.Migrations
                         {
                             Id = 1,
                             Dano = 35,
-                            Nome = "Arco e Flecha",
-                            PersonagemId = 1
+                            Nome = "Arco e Flecha"
                         },
                         new
                         {
                             Id = 2,
                             Dano = 33,
-                            Nome = "Espada",
-                            PersonagemId = 2
+                            Nome = "Espada"
                         },
                         new
                         {
                             Id = 3,
                             Dano = 31,
-                            Nome = "Machado",
-                            PersonagemId = 3
+                            Nome = "Machado"
                         },
                         new
                         {
                             Id = 4,
                             Dano = 30,
-                            Nome = "Punho",
-                            PersonagemId = 4
+                            Nome = "Punho"
                         },
                         new
                         {
                             Id = 5,
                             Dano = 34,
-                            Nome = "Chicote",
-                            PersonagemId = 5
+                            Nome = "Chicote"
                         },
                         new
                         {
                             Id = 6,
                             Dano = 33,
-                            Nome = "Foice",
-                            PersonagemId = 6
+                            Nome = "Foice"
                         },
                         new
                         {
                             Id = 7,
                             Dano = 32,
-                            Nome = "Cajado",
-                            PersonagemId = 7
+                            Nome = "Cajado"
                         });
                 });
 
@@ -112,12 +102,6 @@ namespace RpgApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Defesa")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Derrotas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Disputas")
                         .HasColumnType("int");
 
                     b.Property<int>("Forca")
@@ -140,9 +124,6 @@ namespace RpgApi.Migrations
                     b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Vitorias")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UsuarioId");
@@ -155,98 +136,77 @@ namespace RpgApi.Migrations
                             Id = 1,
                             Classe = 1,
                             Defesa = 23,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 17,
                             Inteligencia = 33,
                             Nome = "Frodo",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
                             Classe = 1,
                             Defesa = 25,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 15,
                             Inteligencia = 30,
                             Nome = "Sam",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         },
                         new
                         {
                             Id = 3,
                             Classe = 3,
                             Defesa = 21,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 18,
                             Inteligencia = 35,
                             Nome = "Galadriel",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         },
                         new
                         {
                             Id = 4,
                             Classe = 2,
                             Defesa = 18,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 18,
                             Inteligencia = 37,
                             Nome = "Gandalf",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         },
                         new
                         {
                             Id = 5,
                             Classe = 1,
                             Defesa = 17,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 20,
                             Inteligencia = 31,
                             Nome = "Hobbit",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         },
                         new
                         {
                             Id = 6,
                             Classe = 3,
                             Defesa = 13,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 21,
                             Inteligencia = 34,
                             Nome = "Celeborn",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         },
                         new
                         {
                             Id = 7,
                             Classe = 2,
                             Defesa = 11,
-                            Derrotas = 0,
-                            Disputas = 0,
                             Forca = 25,
                             Inteligencia = 35,
                             Nome = "Radagast",
                             PontosVida = 100,
-                            UsuarioId = 1,
-                            Vitorias = 0
+                            UsuarioId = 1
                         });
                 });
 
@@ -302,22 +262,11 @@ namespace RpgApi.Migrations
                             Email = "seuEmail@gmail.com",
                             Latitue = -23.520024100000001,
                             Longitude = -46.586497999999999,
-                            PasswordSalt = new byte[] { 110, 51, 0, 103, 137, 117, 80, 82, 59, 86, 196, 177, 233, 21, 149, 29, 76, 71, 157, 103, 64, 146, 198, 84, 33, 251, 240, 155, 132, 179, 151, 55, 117, 13, 188, 7, 67, 137, 83, 79, 197, 193, 91, 22, 9, 219, 76, 254, 228, 178, 125, 183, 23, 141, 31, 25, 137, 150, 73, 53, 17, 112, 92, 228, 36, 108, 38, 24, 194, 183, 82, 13, 49, 131, 88, 111, 193, 7, 46, 109, 221, 177, 76, 181, 22, 236, 114, 99, 8, 138, 101, 60, 142, 141, 32, 1, 64, 40, 20, 107, 5, 31, 235, 207, 247, 175, 58, 124, 253, 74, 118, 69, 208, 61, 105, 198, 205, 28, 174, 83, 214, 190, 193, 89, 129, 218, 4, 166 },
-                            Passwordhash = new byte[] { 63, 217, 213, 117, 24, 64, 156, 225, 120, 122, 206, 165, 59, 72, 249, 163, 70, 248, 2, 206, 154, 95, 69, 229, 71, 210, 211, 120, 182, 2, 175, 136, 221, 169, 213, 52, 40, 141, 224, 127, 49, 34, 109, 100, 214, 13, 150, 95, 229, 32, 9, 57, 24, 79, 150, 19, 133, 147, 30, 181, 191, 232, 2, 75 },
+                            PasswordSalt = new byte[] { 238, 75, 69, 7, 82, 218, 184, 221, 6, 20, 74, 70, 4, 66, 150, 24, 184, 190, 153, 232, 23, 38, 102, 217, 243, 241, 188, 76, 148, 28, 244, 39, 241, 155, 144, 112, 243, 35, 214, 214, 149, 143, 203, 164, 7, 153, 34, 111, 20, 188, 77, 218, 126, 166, 177, 75, 234, 143, 126, 89, 231, 241, 83, 240, 101, 199, 67, 17, 215, 124, 154, 33, 229, 107, 11, 7, 15, 43, 165, 142, 28, 117, 13, 91, 13, 105, 128, 27, 246, 80, 156, 247, 55, 157, 0, 30, 229, 126, 2, 108, 253, 158, 112, 181, 251, 41, 95, 42, 219, 215, 237, 27, 184, 143, 72, 117, 47, 128, 119, 153, 188, 35, 19, 218, 220, 224, 156, 135 },
+                            Passwordhash = new byte[] { 163, 61, 75, 226, 22, 107, 18, 79, 90, 246, 151, 89, 13, 152, 207, 208, 9, 14, 136, 8, 170, 49, 35, 164, 179, 98, 70, 92, 167, 254, 203, 197, 39, 116, 1, 180, 127, 227, 99, 84, 189, 238, 19, 132, 162, 165, 170, 24, 24, 145, 112, 83, 77, 73, 90, 119, 146, 231, 236, 222, 112, 65, 174, 51 },
                             Perfil = "Admin",
                             Username = "usuarioAdmin"
                         });
-                });
-
-            modelBuilder.Entity("RpgApi.Models.Enuns.Arma", b =>
-                {
-                    b.HasOne("RpgApi.Models.Personagem", "Personagem")
-                        .WithOne("Arma")
-                        .HasForeignKey("RpgApi.Models.Enuns.Arma", "PersonagemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Personagem");
                 });
 
             modelBuilder.Entity("RpgApi.Models.Personagem", b =>
@@ -327,11 +276,6 @@ namespace RpgApi.Migrations
                         .HasForeignKey("UsuarioId");
 
                     b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("RpgApi.Models.Personagem", b =>
-                {
-                    b.Navigation("Arma");
                 });
 
             modelBuilder.Entity("RpgApi.Models.Usuario", b =>
