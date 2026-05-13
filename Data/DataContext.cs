@@ -77,6 +77,7 @@ namespace RpgApi.Data
                 new Arma() { Id = 5, Nome = "Chicote", Dano = 34, PersonagemId = 5 },
                 new Arma() { Id = 6, Nome = "Foice", Dano = 33, PersonagemId = 6 },
                 new Arma() { Id = 7, Nome = "Cajado", Dano = 32, PersonagemId = 7 }
+            );
 
                 modelBuilder.Entity<PersonagemHabilidade>()
                     .HasKey(ph => new {ph.PersonagemId, ph.HabilidadeId});
@@ -85,7 +86,7 @@ namespace RpgApi.Data
             (
                new Habilidade(){Id=1, Nome="Adormecer", Dano=39},
                new Habilidade(){Id=2, Nome="Congelar", Dano=41},
-               new Habilidade(){Id=3, Nome="Hipnotizar", Dano=37},
+               new Habilidade(){Id=3, Nome="Hipnotizar", Dano=37}
             );
 
 
@@ -100,18 +101,10 @@ namespace RpgApi.Data
               new PersonagemHabilidade() {PersonagemId = 5, HabilidadeId = 1},
               new PersonagemHabilidade() {PersonagemId = 6, HabilidadeId = 2},
               new PersonagemHabilidade() {PersonagemId = 7, HabilidadeId = 3}
-
-
-
-
-
-
-
-
-            )
+            );
 
                 
-            );
+            
 
             //Início da criação do usuário pádrão.
 
